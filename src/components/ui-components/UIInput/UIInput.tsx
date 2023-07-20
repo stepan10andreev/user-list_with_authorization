@@ -15,7 +15,7 @@ export interface IUIInputProps {
 export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, name, As ='h2', onChange, onBlur, value }) => {
   return (
     <label className={styles.label}>
-      {As != null && <As className={styles.heading}>{heading}</As>}
+      {As != null && <As className={styles.title}>{heading}</As>}
       <input
         type={type}
         name={name}

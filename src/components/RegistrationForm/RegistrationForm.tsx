@@ -10,7 +10,9 @@ export const RegistrationForm = () => {
   }
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+
       <h2 className={styles.title}>Регистрация</h2>
+
       <UIInput
         type={'text'}
         heading={'Имя'}

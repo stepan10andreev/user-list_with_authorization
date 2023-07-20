@@ -4,32 +4,30 @@
 
 :root {
   --white:                      #FFFFFF;
-  --red-light:                  rgba(255, 0, 0, 0.5);
-  --red-accept:                 rgba(194, 0, 0, 0.764);
-  --turquoise:                  #D5E4F7;
-  --text-color:                 #333333;
-  --btn-bg:                     #5558FA;
-  --btn-hover:                  #4344b4;
-  --btn-active:                 #1719a3;
-  --input-hover:                #bebebe;
-  --input-active:               #959595;
-  --header-bg:                  rgb(195, 195, 195);
-  --error-text-color:           rgb(165, 0, 0);
+  --text-color:                 #151317;
+  --input-text-color:           hsl(84, 2%, 51%);
+  --input-placeholder-color:    hsl(84, 2%, 51%, 50%);
+  --input-bg-color:             rgba(248, 248, 248, 1);
+  --input-hover-color:          rgb(215, 215, 215);
+  --input-active-color:         rgb(186, 186, 186);
+  --violet:                     #512689;
+
+
 }
 
 body {
   padding: 0;
   margin: 0;
   min-width: 320px;
-  font-family: 'Grenze', serif;
+  font-family: 'Roboto', serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16x;
+  line-height: 22px;
   background-color: var(--white);
 }
 
 * {
-  font-family: 'Grenze', serif;
+  font-family: 'Roboto', serif;
   color: var(--text-color);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;

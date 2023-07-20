@@ -1,0 +1,17 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 8px;
+}
+
+.button.register {
+  padding: 13px;
+  color: var(--white);
+  background-color: var(--violet);
+}
