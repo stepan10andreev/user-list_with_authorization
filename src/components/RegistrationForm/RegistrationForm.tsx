@@ -5,21 +5,24 @@ import { UIInput } from '../ui-components/UIInput/UIInput'
 import { UIButton } from '../ui-components/UIButton/UIButton'
 import { isMaxLength } from '@/utils/isMaxLength'
 import { INVALID_EMAIL_MESSAGE, INVALID_MAXLENGTH_MESSAGE, INVALID_PASSWORD_MESSAGE, USERNAME_MAX_LENGTH } from '@/constants/registrationFormConstants'
-import { ErrorText } from '../ui-components/ErrorText/ErrorText'
 import { inputOnlyText } from '@/utils/inputOnlyText'
 import { isValidEmail } from '@/utils/isValidEmail'
 import { isValidPassword } from '@/utils/isValidPassword'
-import { HiddingButtom } from '../ui-components/HiddingButton/HiddingButtom'
 import { PasswordInput } from '../ui-components/PasswordInput/PasswordInput'
+import { FormService } from '@/services/registration.service'
 
 export const RegistrationForm = () => {
+
   const [invalidMaxLength, setInvalidMaxLength] = useState(false);
   const [invalidEmail, setInvalidEmail] = useState(false);
   const [invalidPassword, setInvalidPassword] = useState(false);
 
-  const handleSubmit: FormEventHandler = (event) => {
+  const handleSubmit: FormEventHandler = async (event) => {
     event.preventDefault();
-    console.log('here')
+    console.log('Send')
+    const data = await FormService.register()
+    console.log(data)
+
   }
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -83,7 +86,6 @@ export const RegistrationForm = () => {
         error={invalidEmail}
         errorText={INVALID_EMAIL_MESSAGE}
       />
-
 
       <PasswordInput
         heading={'Пароль'}
