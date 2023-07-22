@@ -8,10 +8,21 @@
   font-weight: 400;
   line-height: 22px;
   border-radius: 8px;
+  transition: 0.3s ease-in-out;
 }
 
 .button.register {
   padding: 13px;
   color: var(--white);
   background-color: var(--violet);
+
+  &:focus-visible,
+  &:hover {
+    background-color: var(--violet-light);
+    color: var(--text-gray-color);
+  }
+
+  &:active {
+    background-color: var(--violet-accent);
+  }
 }

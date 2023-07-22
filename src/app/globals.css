@@ -5,13 +5,15 @@
 :root {
   --white:                      #FFFFFF;
   --text-color:                 #151317;
+  --text-gray-color:            #cccccc;
   --input-text-color:           hsl(84, 2%, 51%);
   --input-placeholder-color:    hsl(84, 2%, 51%, 50%);
   --input-bg-color:             rgba(248, 248, 248, 1);
   --input-hover-color:          rgb(215, 215, 215);
   --input-active-color:         rgb(186, 186, 186);
+  --violet-light:               #7a38d1;
   --violet:                     #512689;
-
+  --violet-accent:              #2f1552;
 
 }
 
