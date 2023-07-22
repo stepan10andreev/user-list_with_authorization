@@ -42,3 +42,15 @@
   font-weight: 400;
   line-height: 22px;
 }
+
+
+.passwordWrapper {
+  position: relative;
+
+  & > button[name = "hiddingButton"] {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+  }
+}

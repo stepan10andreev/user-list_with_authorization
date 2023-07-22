@@ -9,6 +9,8 @@ import { ErrorText } from '../ui-components/ErrorText/ErrorText'
 import { inputOnlyText } from '@/utils/inputOnlyText'
 import { isValidEmail } from '@/utils/isValidEmail'
 import { isValidPassword } from '@/utils/isValidPassword'
+import { HiddingButtom } from '../ui-components/HiddingButton/HiddingButtom'
+import { PasswordInput } from '../ui-components/PasswordInput/PasswordInput'
 
 export const RegistrationForm = () => {
   const [invalidMaxLength, setInvalidMaxLength] = useState(false);
@@ -82,27 +84,29 @@ export const RegistrationForm = () => {
         errorText={INVALID_EMAIL_MESSAGE}
       />
 
-      <UIInput
-        type={'password'}
+
+      <PasswordInput
         heading={'Пароль'}
-        placeholderText={'Введите пароль'}
         name={'password'}
+        placeholderText={'Введите пароль'}
         onChange={handleChange}
         onBlur={handleBlur}
         error={invalidPassword}
         errorText={INVALID_PASSWORD_MESSAGE}
       />
 
-      <UIInput
-        type={'password'}
+      <PasswordInput
         heading={'Подтвердите пароль'}
-        placeholderText={'Повторите пароль'}
         name={'repassword'}
+        placeholderText={'Повторите пароль'}
+        onChange={handleChange}
+        onBlur={handleBlur}
       />
 
       <UIButton
         text={'Зарегистрироваться'}
       />
+
     </form>
   )
 }

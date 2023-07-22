@@ -16,7 +16,7 @@ export interface IUIInputProps {
   icon?: React.JSX.Element
 }
 
-export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, name, As ='h2', onChange, onBlur, value, error, errorText, icon }) => {
+export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, name, As ='h2', onChange, onBlur, value, error, errorText }) => {
   return (
     <label className={styles.label}>
       {As != null && <As className={styles.title}>{heading}</As>}
@@ -30,8 +30,6 @@ export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, nam
         onChange={onChange}
         onBlur={onBlur}
       />
-
-      {icon}
 
       {error && (<ErrorText errorText={errorText as string}/>)}
     </label>
