@@ -1,5 +1,6 @@
 import React, { ChangeEventHandler, FC, FocusEventHandler } from 'react'
 import styles from './UIInput.module.scss'
+import { ErrorText } from '../ErrorText/ErrorText';
 
 export interface IUIInputProps {
   type: string;
@@ -10,12 +11,15 @@ export interface IUIInputProps {
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
   value?: string;
+  error?: boolean;
+  errorText?: string;
 }
 
-export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, name, As ='h2', onChange, onBlur, value }) => {
+export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, name, As ='h2', onChange, onBlur, value, error, errorText }) => {
   return (
     <label className={styles.label}>
       {As != null && <As className={styles.title}>{heading}</As>}
+
       <input
         type={type}
         name={name}
@@ -26,6 +30,7 @@ export const UIInput: FC<IUIInputProps> = ({ type, heading, placeholderText, nam
         onBlur={onBlur}
       />
 
+      {error && (<ErrorText errorText={errorText as string}/>)}
     </label>
   )
 }
