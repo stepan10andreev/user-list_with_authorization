@@ -8,8 +8,11 @@ interface IUserData {
   password: string;
 }
 
-interface IRegisterPromise {
+type IRegisterPromise = string | null;
+
+interface IResponse {
   token: string;
+  error: string
 }
 
 export const FormService = {
@@ -22,12 +25,12 @@ export const FormService = {
       body: JSON.stringify(userData)
     })
 
-    const result = await response.json();
+    const result: IResponse = await response.json();
 
     if (response.ok) {
       return result.token
     } else {
-      return result.error
+      return null
     }
     // return result;
   }

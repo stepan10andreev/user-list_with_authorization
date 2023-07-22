@@ -10,7 +10,7 @@ interface IHiddingButtonProps {
 export const HiddingButtom: FC<IHiddingButtonProps> = ({ onClick, isVisible }) => {
 
   return (
-    <button onClick={onClick} name='hiddingButton'>
+    <button  onClick={onClick} name='hiddingButton' type='button'>
       {isVisible ? <NoViewIcon /> : <ViewIcon />}
     </button>
   )

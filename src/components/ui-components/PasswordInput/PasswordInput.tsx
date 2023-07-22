@@ -26,6 +26,7 @@ export const PasswordInput: FC<IPasswordInputProps> = ({ heading, placeholderTex
           className={styles.input}
           onChange={onChange}
           onBlur={onBlur}
+          value={value}
         />
 
         <HiddingButtom onClick={handleClick} isVisible={isVisible}/>

@@ -4,7 +4,7 @@ export const isEmptyInput = (value: string) => {
 }
 
 
-export const isFoundEmptyValue = (values: string[]) => {
+export const isFoundEmptyInput = (values: string[]) => {
   if (values.length === 0) return false;
   for (const value of values) {
     if (isEmptyInput(value)) {

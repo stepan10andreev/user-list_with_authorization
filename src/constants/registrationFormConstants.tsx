@@ -5,4 +5,6 @@ export const INVALID_EMAIL_MESSAGE = 'Некорректный формат emai
 
 export const INVALID_PASSWORD_MESSAGE = 'Пароль должен содержать латиниские буквы, минимум 8 символов, хотя бы 1 спецсимвол (!@#$%^&*), хотя бы 1 цифру, и хотя бы 1 букву в верхнем и нижнем регистре'
 
+export const HAS_EMPTY_INPUT_MESSAGE = 'Есть незаполенные поля'
 
+export const PASSWORD_MISSMATCH_MESSAGE = 'Пароли не сопадают'
