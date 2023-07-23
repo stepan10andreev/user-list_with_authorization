@@ -13,6 +13,14 @@ export const UsersService = {
     const data = await response.json();
 
     return data.data;
+  },
+
+  async getUsersByID(id: string): Promise<IUsersData> {
+    const response = await fetch(`https://reqres.in/api/users/${id}`)
+
+    const data = await response.json();
+
+    return data.data;
   }
 }
 

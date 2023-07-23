@@ -1,0 +1,27 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  align-self: flex-start;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &>span {
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 75px;
+      color: var(--white);
+    }
+
+    & .position {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 38px;
+      color: var(--white);
+    }
+  }
+}

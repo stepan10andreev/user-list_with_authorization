@@ -9,12 +9,49 @@
   border-radius: 10px;
   box-shadow: 0px 0.9960451126098633px 3.984180450439453px 0px #33333326;
 
+  &>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
 
-  &>p {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 23px;
-    color: var(--black);
+
+    &>p {
+      margin: 0;
+      position: relative;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 23px;
+      color: var(--text-colork);
+      transition: 0.35s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background-color: var(--violet);
+        transition: width 0.35s;
+      }
+    }
+
+    &:focus-visible>p,
+    &:hover>p {
+      color: var(--violet);
+    }
+
+    &:focus-visible>p::before,
+    &:hover>p::before {
+      width: 100%;
+    }
+
+    &:active>p {
+      color: var(--violet-accent);
+    }
   }
 
   &>button[name='likeButton'] {
