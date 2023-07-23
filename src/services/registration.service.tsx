@@ -1,8 +1,3 @@
-// const data = {
-//   "email": "charles.morris@reqres.in",
-//   "password": "pistol"
-// }
-
 interface IUserData {
   email: string;
   password: string;
