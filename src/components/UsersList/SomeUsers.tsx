@@ -1,7 +1,9 @@
 import { UsersService } from '@/services/users.service';
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import useSWR from 'swr';
 import { UserCard } from '../UserCard/UserCard';
+import { PulseLoader } from 'react-spinners';
+import styles from './UserList.module.scss'
 
 interface ISomeUsersProps {
   index: number;
@@ -9,6 +11,18 @@ interface ISomeUsersProps {
 
 export const SomeUsers: FC<ISomeUsersProps> = ({ index }) => {
   const { data, isLoading, error } = useSWR(`/api/users?page=${index}`, UsersService.getUsers);
+
+  if (isLoading) return (
+    <div className={styles.spinner}>
+      <PulseLoader
+        color="#512689"
+        size={20}
+      />
+    </div>
+  )
+
+  if (data?.length === 0) return null
+
 
   return (
     <>

@@ -44,6 +44,34 @@
   }
 }
 
+.button.more {
+  padding: 9px 16px;
+  gap: 8px;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  background-color: transparent;
+
+  & > svg > path {
+    fill: var(--text-color);
+    transition: 0.3s;
+  }
+
+  &:focus-visible,
+  &:hover {
+    background-color: var(--violet-light);
+    color: var(--text-gray-color);
+  }
+
+  &:focus-visible > svg > path,
+  &:hover > svg > path {
+    fill: var(--text-gray-color);
+  }
+
+  &:active {
+    background-color: var(--violet-accent);
+  }
+}
+
 .like {
   width: fit-content;
   transition: 0.3s;

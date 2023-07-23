@@ -1,0 +1,24 @@
+.list {
+  position: relative;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  gap: 20px;
+
+  & + button[name='moreButton'] {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  // top: 50%;
+  bottom: 0;
+  // transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+}

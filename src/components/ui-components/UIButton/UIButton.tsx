@@ -17,7 +17,7 @@ export const UIButton: FC<IUIButton> = ({ text, type, name, onClick, icon }) => 
         [styles.register]: text === 'Зарегистрироваться',
         [styles.exit]: text === ('Выход' || 'Назад'),
         [styles.more]: text === 'Показать еще',
-        [styles.like]: icon
+        [styles.like]: icon && !text,
       })}
       type={type}
       name={name}
