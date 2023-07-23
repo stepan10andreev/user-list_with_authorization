@@ -1,23 +1,31 @@
-import React, { FC } from 'react'
+'use client'
+import React, { FC, useState } from 'react'
 import styles from './UserList.module.scss'
 import { UserCard } from '../UserCard/UserCard'
+import useSWR from 'swr';
+import { UsersService } from '@/services/users.service';
+import { ArrowIcon } from '../ui-components/Icons/ArrowIcon';
+import { UIButton } from '../ui-components/UIButton/UIButton';
+import { SomeUsers } from './SomeUsers';
 
+export const UserList = () => {
+  const [count, setCount] = useState(1)
 
-interface IUserList {
-  id: number,
-  email: string,
-  first_name: string,
-  last_name: string,
-  avatar: string
-}
-// FC<IUserList>
-export const UserList  = () => {
+  const USERS = [];
+
+  for (let i = 0; i < count; i++) {
+    USERS.push(<SomeUsers index={i} key={i} />)
+  }
+
   return (
     <ul className={styles.list}>
-      {/* {data.map((item) => (
-        <UserCard />
-      ))} */}
-      <UserCard />
+      {USERS}
+      <UIButton
+        name={'moreButton'}
+        text={'Показать еще'}
+        icon={<ArrowIcon />}
+        onClick={() => setCount(count + 1)}
+      />
     </ul>
   )
 }
