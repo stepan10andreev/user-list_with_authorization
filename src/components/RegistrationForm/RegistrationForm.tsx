@@ -13,6 +13,7 @@ import { FormService } from '@/services/registration.service'
 import { IRegistrationFormData } from './registrationForm.interface'
 import { ErrorText } from '../ui-components/ErrorText/ErrorText'
 import { isFoundEmptyInput } from '@/utils/isEmptyInput'
+import { useRouter } from 'next/navigation'
 
 export const RegistrationForm = () => {
   const [isEmptyValue, setIsValue] = useState(false);
@@ -22,6 +23,8 @@ export const RegistrationForm = () => {
   const [isMatchedPasswords, setIsMatchedPasswords] = useState(true);
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
+
+  const router = useRouter();
 
   useEffect(() => {
     password === repassword && setIsMatchedPasswords(true)
@@ -55,7 +58,7 @@ export const RegistrationForm = () => {
 
     const data = await FormService.register(userData)
     console.log(data)
-
+    router.push('/users')
   }
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {

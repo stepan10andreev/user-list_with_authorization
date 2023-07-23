@@ -26,3 +26,20 @@
     background-color: var(--violet-accent);
   }
 }
+
+.button.exit {
+  padding: 8px 16px;
+  color: var(--text-gray-light-color);
+  border: 1px solid var(--text-gray-light-color);
+  background-color: transparent;
+
+  &:focus-visible,
+  &:hover {
+    background-color: var(--violet-light);
+    color: var(--text-gray-color);
+  }
+
+  &:active {
+    background-color: var(--violet-accent);
+  }
+}

@@ -1,10 +1,10 @@
 import { RegistrationForm } from '@/components/RegistrationForm/RegistrationForm'
-import { Container } from '@/components/ui-components/Container/Container'
+import { CenterContainer } from '@/components/ui-components/CenterContainer/CenterContainer'
 
 export default function Home() {
   return (
-    <Container width={500}>
+    <CenterContainer width={500}>
       <RegistrationForm />
-    </Container>
+    </CenterContainer>
   )
 }
