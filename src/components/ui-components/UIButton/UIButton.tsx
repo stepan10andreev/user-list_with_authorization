@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './UIButton.module.scss'
 
 interface IUIButton {
-  text: string;
+  text?: string;
   type?: 'button' | 'submit' | 'reset';
   name?: string;
   onClick?: () => void;
@@ -15,8 +15,9 @@ export const UIButton: FC<IUIButton> = ({ text, type, name, onClick, icon }) => 
     <button
       className={clsx(styles.button, {
         [styles.register]: text === 'Зарегистрироваться',
-        [styles.exit]: text === 'Выход' || 'Назад',
+        [styles.exit]: text === ('Выход' || 'Назад'),
         [styles.more]: text === 'Показать еще',
+        [styles.like]: icon
       })}
       type={type}
       name={name}

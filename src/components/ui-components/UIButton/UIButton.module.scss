@@ -43,3 +43,19 @@
     background-color: var(--violet-accent);
   }
 }
+
+.like {
+  width: fit-content;
+  transition: 0.3s;
+
+  &>svg {
+    // fill:none;
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &:focus-visible>svg,
+  &:hover>svg {
+    transform: scale(1.4);
+    fill: #b781ff;
+  }
+}

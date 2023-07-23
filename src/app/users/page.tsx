@@ -1,9 +1,13 @@
+import { UserList } from "@/components/UsersList/UserList";
 import { Container } from "@/components/ui-components/Container/Container";
+import { Content } from "@/components/ui-components/Content/Content";
 
 export default function UsersListPage() {
   return (
-    <Container width={1440}>
-
-    </Container>
+    <Content>
+      <Container width={1440}>
+        <UserList />
+      </Container>
+    </Content>
   )
 }
