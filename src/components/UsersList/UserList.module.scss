@@ -5,10 +5,11 @@
   grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
   gap: 20px;
 
-  & + button[name='moreButton'] {
+  &+button[name='moreButton'] {
     margin: 0 auto;
     width: fit-content;
   }
+
 }
 
 .spinner {
@@ -21,4 +22,18 @@
   bottom: 0;
   // transform: translate(-50%, -50%);
   transform: translateX(-50%);
+}
+
+
+.usersIsOver {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 32px;
+
+  & > span {
+    color: var(--violet-accent);
+  }
 }

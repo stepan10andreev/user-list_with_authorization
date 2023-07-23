@@ -8,17 +8,19 @@ export interface IUsersStatePayload {
 interface IUsersState {
   [k: string]: string | boolean | null;
   usersIsOver: boolean;
+  isLoadingData: boolean;
 }
 
 const initialState: IUsersState = {
   usersIsOver: false,
+  isLoadingData: true,
 }
 
 const usersStateSlice = createSlice({
   name: 'usersState',
   initialState,
   reducers: {
-    updateUserData: {
+    updateUsersState: {
       reducer (state, action: PayloadAction<IUsersStatePayload>) {
         state[action.payload.prop] = action.payload.value;
       },
@@ -34,6 +36,6 @@ const usersStateSlice = createSlice({
   }
 })
 
-export const { updateUserData } = usersStateSlice.actions;
+export const { updateUsersState } = usersStateSlice.actions;
 
 export default usersStateSlice.reducer;
