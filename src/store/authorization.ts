@@ -7,12 +7,12 @@ export interface IAuthorizationPayload {
 
 interface IAuthorization {
   [k: string]: string | boolean | null;
-  isAuth: boolean;
+  // isAuth: boolean;
   token: string | null;
 }
 
 const initialState: IAuthorization = {
-  isAuth: false,
+  // isAuth: localStorage.getItem('my-reg-token') ? true : false,
   token: null,
 }
 

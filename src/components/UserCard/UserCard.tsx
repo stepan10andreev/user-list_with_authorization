@@ -1,5 +1,5 @@
 'use client'
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import styles from './UserCard.module.scss'
 import { UIText } from '../ui-components/UIText/UIText'
 import Image from 'next/image'
@@ -16,10 +16,18 @@ const imageStyle = {
 }
 
 export const UserCard: FC<IUserCardProps> = ({ first_name, last_name, avatar, id }) => {
-  const [isLiked, setIsLiked] = useState(false)
+  // localStorage  - сохранение после перезагрухки лайков
+  // const [isLiked, setIsLiked] = useState(false)
+  const [currentLiked, setCurrentLiked] = useState<boolean>(false)
+
+  useEffect(() => {
+    localStorage.getItem(`userLike-${id}`) ? setCurrentLiked(true) : setCurrentLiked(false)
+  }, [])
 
   const handleLike = () => {
-    setIsLiked(!isLiked)
+    // setIsLiked(!isLiked)
+    setCurrentLiked(!currentLiked)
+    !localStorage.getItem(`userLike-${id}`) ? localStorage.setItem(`userLike-${id}`, 'true') : localStorage.removeItem(`userLike-${id}`)
   }
 
   return (
@@ -36,8 +44,8 @@ export const UserCard: FC<IUserCardProps> = ({ first_name, last_name, avatar, id
         </div>
         <UIText As={'p'} text={`${first_name} ${last_name}`}></UIText>
       </Link>
-      {isLiked ? (
-        <UIButton name={'likeButton'} icon={<LikeIcon isLiked={isLiked} />} onClick={handleLike} />
+      {currentLiked ? (
+        <UIButton name={'likeButton'} icon={<LikeIcon isLiked={currentLiked} />} onClick={handleLike} />
       ) : (
         <UIButton name={'likeButton'} icon={<LikeIcon />} onClick={handleLike} />
       )}

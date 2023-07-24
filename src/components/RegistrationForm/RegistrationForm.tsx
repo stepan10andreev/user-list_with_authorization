@@ -14,6 +14,8 @@ import { IRegistrationFormData } from './registrationForm.interface'
 import { ErrorText } from '../ui-components/ErrorText/ErrorText'
 import { isFoundEmptyInput } from '@/utils/isEmptyInput'
 import { useRouter } from 'next/navigation'
+import { useAppDispatch } from '../Hooks/useApp'
+import { updateAuthorization } from '@/store/authorization'
 
 export const RegistrationForm = () => {
   const [isEmptyValue, setIsValue] = useState(false);
@@ -25,6 +27,7 @@ export const RegistrationForm = () => {
   const [repassword, setRepassword] = useState('');
 
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     password === repassword && setIsMatchedPasswords(true)
@@ -56,9 +59,14 @@ export const RegistrationForm = () => {
 
     const { username, repassword, ...userData } = FORM_DATA;
 
-    const data = await FormService.register(userData)
-    console.log(data)
-    router.push('/users')
+    const token = await FormService.register(userData)
+
+    if (token) {
+      localStorage.setItem('my-reg-token', token);
+      dispatch(updateAuthorization('token', token));
+      dispatch(updateAuthorization('isAuth', true));
+      router.push('/users')
+    }
   }
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
