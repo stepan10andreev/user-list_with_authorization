@@ -2,7 +2,7 @@
   position: relative;
   margin-bottom: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 
   &+button[name='moreButton'] {
@@ -19,7 +19,7 @@
   position: absolute;
   left: 50%;
   // top: 50%;
-  bottom: -5%;
+  bottom: 0;
   // transform: translate(-50%, -50%);
   transform: translateX(-50%);
 }
@@ -50,5 +50,18 @@
 
   & > span {
     color: var(--violet-accent);
+  }
+}
+
+@media (max-width: 768px) {
+  .usersIsOver {
+    font-size: 24px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .usersIsOver {
+    font-size: 18px;
   }
 }

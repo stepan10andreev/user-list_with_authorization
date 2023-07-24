@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 30px;
   align-self: flex-start;
 
   & .wrapper {
@@ -22,6 +22,39 @@
       font-weight: 400;
       line-height: 38px;
       color: var(--white);
+    }
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .userInfo {
+    align-self: center;
+  }
+}
+
+
+@media (max-width: 660px) {
+  .userInfo {
+    flex-direction: column;
+
+    & .wrapper {
+      align-items: center;
+      order: -1;
+
+      &>span {
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 42px;
+
+      }
+
+      & .position {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+      }
     }
   }
 }

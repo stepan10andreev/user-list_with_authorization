@@ -13,6 +13,7 @@ import { NotAuthPage } from './NotAuthPage'
 import { useRouter } from 'next/navigation'
 import { BeatLoader, BounceLoader } from 'react-spinners'
 import styles from '@/components/UsersList/UserList.module.scss'
+import { ExitIcon } from '../ui-components/Icons/ExitIcon'
 
 
 export const UsersListScreen = () => {
@@ -45,6 +46,7 @@ export const UsersListScreen = () => {
                 <Title text={'Наша команда'}></Title>
                 <UIText As={'p'} text={USERS_PAGE_HEADER_DESRIPTION}></UIText>
                 <UIButton type={'button'} text={'Выход'} name={'exitButton'} onClick={handleExit} />
+                <UIButton type={'button'} icon={<ExitIcon />} name={'exitIcon'} onClick={handleExit} />
               </Container>
             </Header>
             <Content>

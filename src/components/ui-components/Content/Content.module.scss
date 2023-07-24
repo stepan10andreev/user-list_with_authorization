@@ -10,3 +10,11 @@
     // justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .main {
+    & > div {
+      padding: 0 35px;
+    }
+  }
+}

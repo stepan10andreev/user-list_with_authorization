@@ -14,6 +14,8 @@ import { UserInfoContent } from '../UserInfoContent/UserInfoContent'
 import { useAppSelector } from '../Hooks/useApp'
 import { IUsersData } from '@/services/users.service'
 import { useRouter } from 'next/navigation'
+import { ExitIcon } from '../ui-components/Icons/ExitIcon'
+import { GoBackIcon } from '../ui-components/Icons/GoBackIcon'
 
 interface IUserScreen {
   userData: IUsersData
@@ -43,7 +45,11 @@ export const UserScreen: FC<IUserScreen> = ({userData}) => {
             id={userData.id}
           />
           <UIButton type={'button'} text={'Выход'} name={'exitButton'} onClick={handleExit}/>
+          <UIButton type={'button'} icon={<ExitIcon />} name={'exitIcon'} onClick={handleExit} />
+
           <UIButton type={'button'} text={'Назад'} name={'backButton'} onClick={() => router.back()}/>
+          <UIButton type={'button'} icon={<GoBackIcon />} name={'goBackIcon'} onClick={handleExit} />
+
         </Container>
       </Header>
       <Content>

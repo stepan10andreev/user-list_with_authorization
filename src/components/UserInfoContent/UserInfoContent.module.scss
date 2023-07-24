@@ -3,3 +3,22 @@
   display: flex;
   gap: 130px;
 }
+
+
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 0;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    flex-direction: column;
+
+    & > div:first-child {
+      order: 2;
+    }
+  }
+}
+
