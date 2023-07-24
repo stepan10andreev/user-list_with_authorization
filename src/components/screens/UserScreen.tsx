@@ -43,7 +43,7 @@ export const UserScreen: FC<IUserScreen> = ({ userData }) => {
               <UIButton type={'button'} icon={<ExitIcon />} name={'exitIcon'} onClick={handleExit} />
 
               <UIButton type={'button'} text={'Назад'} name={'backButton'} onClick={() => router.back()} />
-              <UIButton type={'button'} icon={<GoBackIcon />} name={'goBackIcon'} onClick={handleExit} />
+              <UIButton type={'button'} icon={<GoBackIcon />} name={'goBackIcon'} onClick={() => router.back()} />
 
             </Container>
           </Header>
