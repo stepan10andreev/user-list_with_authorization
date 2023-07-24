@@ -1,8 +1,5 @@
 import React, { FC, PropsWithChildren } from 'react'
 import styles from './UserContacts.module.scss'
-import { Contact, EContactType, IContactProps } from '../../ui-components/Contact/Contact'
-
-interface IUserContacts extends Pick<IContactProps, 'contactValue'> { }
 
 export const UserContacts: FC<PropsWithChildren> = ({ children }) => {
   return (

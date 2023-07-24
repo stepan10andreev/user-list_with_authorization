@@ -2,18 +2,14 @@
   padding: 50px 0;
   background-color: var(--white);
 
-  & > div {
+  &>div {
     padding: 0 80px;
-    // display: grid;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   .main {
-    & > div {
+    &>div {
       padding: 0 35px;
     }
   }

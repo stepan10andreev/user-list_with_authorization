@@ -7,7 +7,6 @@ import { UsersService } from '@/services/users.service';
 import { ArrowIcon } from '../ui-components/Icons/ArrowIcon';
 import { UIButton } from '../ui-components/UIButton/UIButton';
 import { SomeUsers } from './SomeUsers';
-import { BounceLoader, PulseLoader } from 'react-spinners';
 import { useAppSelector } from '../Hooks/useApp';
 import { UIText } from '../ui-components/UIText/UIText';
 
@@ -22,11 +21,9 @@ export const UserList = () => {
   for (let i = 1; i <= count; i++) {
     USERS.push(<SomeUsers index={i} key={i} />)
   }
-  console.log(USERS)
+
   return (
     <>
-
-      {/* {USERS.length === 0 && <div>111111</div>} */}
       <ul className={styles.list}>
         {USERS}
       </ul>

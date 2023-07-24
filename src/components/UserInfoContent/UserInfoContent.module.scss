@@ -16,9 +16,8 @@
   .wrapper {
     flex-direction: column;
 
-    & > div:first-child {
+    &>div:first-child {
       order: 2;
     }
   }
 }
-

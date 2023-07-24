@@ -6,16 +6,14 @@ export interface IUsersStatePayload {
 }
 
 interface IUsersState {
-  [k: string]: string | boolean | null | any[];
+  [k: string]: string | boolean | null;
   usersIsOver: boolean;
   isLoadingData: boolean;
-  isLikedUsers: any[];
 }
 
 const initialState: IUsersState = {
   usersIsOver: false,
   isLoadingData: true,
-  isLikedUsers: []
 }
 
 const usersStateSlice = createSlice({

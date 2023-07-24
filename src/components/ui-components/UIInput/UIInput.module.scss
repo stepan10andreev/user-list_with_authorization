@@ -4,7 +4,7 @@
   width: 100%;
 
 
-  & > .title  {
+  &>.title {
     margin: 0;
     margin-bottom: 8px;
   }
@@ -47,7 +47,7 @@
 .passwordWrapper {
   position: relative;
 
-  & > button[name = "hiddingButton"] {
+  &>button[name="hiddingButton"] {
     position: absolute;
     top: 50%;
     right: 2%;

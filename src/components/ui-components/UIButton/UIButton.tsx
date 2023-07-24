@@ -25,6 +25,6 @@ export const UIButton: FC<IUIButton> = ({ text, type, name, onClick, icon }) => 
     >
       {text}
       {icon}
-  </button>
+    </button>
   )
 }

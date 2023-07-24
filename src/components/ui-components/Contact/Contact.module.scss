@@ -15,12 +15,12 @@
     transition: 0.3s;
   }
 
-  &:focus-visible > span,
-  &:hover  > span{
+  &:focus-visible>span,
+  &:hover>span {
     color: var(--violet);
   }
 
-  &:active  > span{
+  &:active>span {
     color: var(--violet-accent);
   }
 }

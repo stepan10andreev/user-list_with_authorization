@@ -1,10 +1,10 @@
 import React, { FC, MouseEventHandler, useState } from 'react'
-import { IUIInputProps, UIInput } from '../UIInput/UIInput'
+import { IUIInputProps } from '../UIInput/UIInput'
 import { HiddingButtom } from '../HiddingButton/HiddingButtom'
 import styles from '../UIInput/UIInput.module.scss'
 import { ErrorText } from '../ErrorText/ErrorText'
 
-interface IPasswordInputProps extends Omit<IUIInputProps, 'type'> {}
+interface IPasswordInputProps extends Omit<IUIInputProps, 'type'> { }
 
 export const PasswordInput: FC<IPasswordInputProps> = ({ heading, placeholderText, name, As = 'h2', onChange, onBlur, value, error, errorText }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,10 +29,10 @@ export const PasswordInput: FC<IPasswordInputProps> = ({ heading, placeholderTex
           value={value}
         />
 
-        <HiddingButtom onClick={handleClick} isVisible={isVisible}/>
+        <HiddingButtom onClick={handleClick} isVisible={isVisible} />
       </div>
 
-      {error && (<ErrorText errorText={errorText as string}/>)}
+      {error && (<ErrorText errorText={errorText as string} />)}
 
     </label>
   )

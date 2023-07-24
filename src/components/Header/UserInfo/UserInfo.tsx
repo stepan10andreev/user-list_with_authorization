@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import styles from './UserInfo.module.scss'
 import Image from 'next/image'
-import { IUsersData } from '@/services/users.service'
 import { UIText } from '@/components/ui-components/UIText/UIText'
 import { IUserCardProps } from '@/components/UserCard/UserCard'
 import { getRandomUserPosition } from '@/utils/getRandomUserPosition'

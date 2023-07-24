@@ -26,7 +26,7 @@ export const Contact: FC<IContactProps> = ({ contactType, contactValue }) => {
     <a href={`${contactType}:${deleteAllSpaces(contactValue)}`} className={styles.contactLink}>
       {mail && <EmailIcon />}
       {phone && <PhoneIcon />}
-      <UIText text={contactValue}/>
+      <UIText text={contactValue} />
     </a>
   )
 }

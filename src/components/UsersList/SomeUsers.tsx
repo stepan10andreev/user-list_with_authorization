@@ -17,10 +17,10 @@ export const SomeUsers: FC<ISomeUsersProps> = ({ index }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    (data?.length === 0) ?  dispatch(updateUsersState('usersIsOver', true)) : dispatch(updateUsersState('usersIsOver', false))
+    (data?.length === 0) ? dispatch(updateUsersState('usersIsOver', true)) : dispatch(updateUsersState('usersIsOver', false))
     !isLoading && dispatch(updateUsersState('isLoadingData', false))
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isLoading])
 
   if (isLoading) return (

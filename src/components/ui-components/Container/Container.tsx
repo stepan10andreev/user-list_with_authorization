@@ -7,7 +7,7 @@ export interface IContainerProps {
 
 export const Container: FC<IContainerProps> = ({ children, width }) => {
   const STYLE = {
-    margin:' 0 auto',
+    margin: '0 auto',
     position: 'relative' as 'relative',
     width: '100%',
     maxWidth: width,

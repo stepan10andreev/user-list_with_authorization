@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useAppDispatch } from './useApp';
+import { useEffect, useState } from 'react'
 
 export const useAuth = (userData: any) => {
   const [isLoading, setLoading] = useState(false);

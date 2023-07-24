@@ -6,9 +6,9 @@ import styles from './UserDescription.module.scss'
 export const UserDescription = () => {
   return (
     <div className={styles.wrapper}>
-      <UIText As='p' text={USER_DESCRIPTION_1}/>
-      <UIText As='p' text={USER_DESCRIPTION_2}/>
-      <UIText As='p' text={USER_DESCRIPTION_3}/>
+      <UIText As='p' text={USER_DESCRIPTION_1} />
+      <UIText As='p' text={USER_DESCRIPTION_2} />
+      <UIText As='p' text={USER_DESCRIPTION_3} />
     </div>
   )
 }
