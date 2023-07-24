@@ -9,6 +9,11 @@
   line-height: 22px;
   border-radius: 8px;
   transition: 0.3s ease-in-out;
+
+  &:focus-visible,
+  &:hover {
+    outline: none;
+  }
 }
 
 .button.register {

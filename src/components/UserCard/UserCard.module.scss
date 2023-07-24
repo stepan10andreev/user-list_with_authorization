@@ -17,6 +17,10 @@
     gap: 16px;
     width: 100%;
 
+    &:focus-visible {
+      outline: none;
+    }
+
 
     &>p {
       margin: 0;
